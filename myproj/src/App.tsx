@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+type FooterProps = {
+  copyright : string;
 }
+
+const user = {
+  userName : 'Inna',
+  userSurname : 'Yasinchuk',
+  city : 'Kyiv',
+ }
+
+const Footer: React.FC<FooterProps> = (props) => (
+  <footer>Footer {props.copyright}</footer>
+)
+
+const App = () =>(
+
+    <div className="App">
+      <h1>Hello {user.userName} {user.userSurname}</h1>
+      <p>You live in {user.city}</p>
+      <Footer copyright ='C' />
+    </div>
+  
+)
 
 export default App;
